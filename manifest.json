@@ -2,16 +2,16 @@
   "manifest_version": 3,
   "name": "AdShield - 廣告阻擋器",
   "version": "1.0",
-  "description": "期末專題：簡易且高效的廣告攔截擴充功能。",
-  "permissions": 
-  [
+  "description": "期末專題：簡易廣告攔截擴充功能。",
+  "permissions": [
     "declarativeNetRequest",
     "storage"
   ],
-  "host_permissions": 
-  [
+  
+  "host_permissions": [
     "<all_urls>"
   ],
+  
   "background": 
   {
     "service_worker": "background.js"
@@ -30,8 +30,7 @@
   
   "declarative_net_request": 
   {
-    "rule_resources": 
-    [
+    "rule_resources": [
       {
         "id": "ruleset_1",
         "enabled": true,
@@ -39,6 +38,7 @@
       }
     ]
   },
+  
   "icons": 
   {
     "16": "icons/icon16.png",
