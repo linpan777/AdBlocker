@@ -1,27 +1,13 @@
 [
   {
-    // 規則 ID（必須唯一）
     "id": 1,
-
-    // 規則優先順序（數字越小越優先）
     "priority": 1,
-
-    // 規則動作：阻擋請求
     "action": {
       "type": "block"
     },
-
-    // 規則條件
     "condition": {
-      // 當網址中包含 ads 關鍵字時
-      "urlFilter": "ads",
-
-      // 限定阻擋的資源類型
-      "resourceTypes": [
-        "script",
-        "image",
-        "xmlhttprequest"
-      ]
+      "urlFilter": "googleadservices.com", 
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame"]
     }
   },
   {
@@ -31,12 +17,19 @@
       "type": "block"
     },
     "condition": {
-      // 常見 Google 廣告服務
-      "urlFilter": "doubleclick",
-      "resourceTypes": [
-        "script",
-        "image"
-      ]
+      "urlFilter": "doubleclick.net",
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "ad_banner",
+      "resourceTypes": ["image", "sub_frame"]
     }
   }
 ]
