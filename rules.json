@@ -6,8 +6,8 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "googleadservices.com", 
-      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame"]
+      "urlFilter": "googleadservices.com",
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"] 
     }
   },
   {
@@ -17,8 +17,8 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "doubleclick.net",
-      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame"]
+      "urlFilter": "googleadservices.com",
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"] 
     }
   },
   {
