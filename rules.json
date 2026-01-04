@@ -2,31 +2,25 @@
   {
     "id": 1,
     "priority": 1,
-    "action": {
-      "type": "block"
-    },
+    "action": { "type": "block" },
     "condition": {
       "urlFilter": "googleadservices.com",
-      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"] 
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"]
     }
   },
   {
     "id": 2,
     "priority": 1,
-    "action": {
-      "type": "block"
-    },
+    "action": { "type": "block" },
     "condition": {
-      "urlFilter": "googleadservices.com",
-      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"] 
+      "urlFilter": "doubleclick.net",  <-- 改成這裡，擋 DoubleClick 廣告
+      "resourceTypes": ["script", "image", "xmlhttprequest", "sub_frame", "main_frame"]
     }
   },
   {
     "id": 3,
     "priority": 1,
-    "action": {
-      "type": "block"
-    },
+    "action": { "type": "block" },
     "condition": {
       "urlFilter": "ad_banner",
       "resourceTypes": ["image", "sub_frame"]
