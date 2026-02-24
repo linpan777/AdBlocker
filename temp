@@ -1,0 +1,107 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void add(int& times, vector<int> addend, vector<int> adder);
+
+int main()
+{
+	long long int a, b, c;
+	vector<int> addend;
+	vector<int> adder;
+	while (cin >> a >> b)
+	{
+		int times{ 0 };
+		addend.clear();
+		adder.clear();
+		if (a == 0 && b == 0)
+			break;
+
+		while (a != 0)
+		{
+			addend.push_back(a % 10);
+			a /= 10;
+		}
+		while (b != 0)
+		{
+			adder.push_back(b % 10);
+			b /= 10;
+		}
+
+		c = a + b;
+		for (int i{ 0 }; i > addend.size(); i++)
+		{
+			if (c % 10 >= addend[i])
+				continue;
+			else
+			{
+				add(times, addend, adder);
+				break;
+			}
+		}
+		
+		if (times == 0)
+			cout << "No carry operation." << endl;
+		else
+			cout << times << " carry operations." << endl;
+	}
+}
+
+void add(int &times, vector<int> addend, vector<int> adder)
+{
+	for (int i = addend.size() - 1; i >= 0; i--)
+		addend[i] += adder[i];
+
+	for(int i{0}; i < addend.size() - 1; i++)
+		if (addend[i] >= 10)
+		{
+			addend[i] -= 10;
+			addend[i + 1]++;
+			times++;
+		}
+
+	if (addend[addend.size() - 1] >= 10)
+	{
+		addend[addend.size() - 1] -= 10;
+		addend.push_back(1);
+		times++;
+	}
+}
+
+
+
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	long long int a, b, c;
+	long long int times{ 0 }, max{ 0 };
+	while (cin >> a >> b)
+	{
+		if (a > b)
+			swap(a, b);
+		max = 0;
+		for (long long int i{ a }; i <= b; i++)
+		{
+			c = i;
+			times = 0;
+			while (c != 1)
+			{
+				times++;
+				if (c % 2 == 1 || c == 0)
+					c = 3 * c + 1;
+				else
+					c /= 2;
+			}
+			if (max < times)
+				max = times;
+		}
+		
+		if (a == 0)
+			max += 2;
+		cout << a << " " << b << " " << max + 1 << endl;
+	}
+}
