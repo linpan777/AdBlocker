@@ -1,0 +1,25 @@
+{
+    "name": "AD-Blocker",
+    "description": "我恨廣告，老娘要把所有廣告擋掉還不影響頁面！",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "點我設定廣告攔截"
+    },
+    "permissions": ["declarativeNetRequest"],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules/rules_1.json"
+            },
+            {
+                "id": "ruleset_2",
+                "enabled": true,
+                "path": "rules/rules_2.json"
+            }
+        ]
+    }
+}
